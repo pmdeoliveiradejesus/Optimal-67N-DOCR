@@ -1,0 +1,135 @@
+clear all
+!UrdanetaExtendedCase  
+
+!!! Near-end Fault 
+!!  Line 1
+Redirect GridModel.dss 
+New Load.n3.1 Phases=1  Bus1=n3.1   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+New Load.n3.2 Phases=1  Bus1=n3.2   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+New Load.n3.3 Phases=1  Bus1=n3.3   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+new line.line14 geometry=4wire12 length=00.001 units=km bus1=n1.1.2.3.4 bus2=n4.1.2.3.4  Rho=100
+new line.line42 geometry=4wire12 length=49.999 units=km bus1=n4.1.2.3.4 bus2=n2.1.2.3.4  Rho=100
+new line.line25 geometry=4wire23 length=00.001 units=km bus1=n2.1.2.3.4 bus2=n5.1.2.3.4  Rho=100
+new line.line53 geometry=4wire23 length=39.999 units=km bus1=n5.1.2.3.4 bus2=n3.1.2.3.4  Rho=100
+new line.line36 geometry=4wire13 length=00.001 units=km bus1=n3.1.2.3.4 bus2=n6.1.2.3.4  Rho=100
+new line.line61 geometry=4wire13 length=59.999 units=km bus1=n6.1.2.3.4 bus2=n1.1.2.3.4  Rho=100
+New Reactor.SourceGround  Phases=1 Bus1=n1.4 Bus2=n1.0 R=00.00001 X=0
+New Reactor.Load2Ground  Phases=1 Bus1=n2.4 Bus2=n2.0 R=00.00001 X=0
+New Reactor.Load3Ground  Phases=1 Bus1=n3.4 Bus2=n3.0 R=00.00001 X=0
+New Reactor.Load4Ground Phases=1 Bus1=n4.4 Bus2=n4.0 R=0.001 X=0
+New Reactor.Load5Ground Phases=1 Bus1=n5.4 Bus2=n5.0 R=0.001 X=0
+New Reactor.Load6Ground Phases=1 Bus1=n6.4 Bus2=n6.0 R=0.001 X=0
+New fault.Falla1n   Bus1= n4.3   Bus2=n4.4 r=10.00000001
+solve
+Export Currents F1near.csv
+
+
+!!! Near-end Fault 
+!!  Line 2
+Redirect GridModel.dss 
+New Load.n3.1 Phases=1  Bus1=n3.1   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+New Load.n3.2 Phases=1  Bus1=n3.2   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+New Load.n3.3 Phases=1  Bus1=n3.3   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+new line.line14 geometry=4wire12 length=00.001 units=km bus1=n1.1.2.3.4 bus2=n4.1.2.3.4  Rho=100
+new line.line42 geometry=4wire12 length=49.999 units=km bus1=n4.1.2.3.4 bus2=n2.1.2.3.4  Rho=100
+new line.line25 geometry=4wire23 length=00.001 units=km bus1=n2.1.2.3.4 bus2=n5.1.2.3.4  Rho=100
+new line.line53 geometry=4wire23 length=39.999 units=km bus1=n5.1.2.3.4 bus2=n3.1.2.3.4  Rho=100
+new line.line36 geometry=4wire13 length=00.001 units=km bus1=n3.1.2.3.4 bus2=n6.1.2.3.4  Rho=100
+new line.line61 geometry=4wire13 length=59.999 units=km bus1=n6.1.2.3.4 bus2=n1.1.2.3.4  Rho=100
+New Reactor.SourceGround  Phases=1 Bus1=n1.4 Bus2=n1.0 R=00.00001 X=0
+New Reactor.Load2Ground  Phases=1 Bus1=n2.4 Bus2=n2.0 R=00.00001 X=0
+New Reactor.Load3Ground  Phases=1 Bus1=n3.4 Bus2=n3.0 R=00.00001 X=0
+New Reactor.Load4Ground Phases=1 Bus1=n4.4 Bus2=n4.0 R=0.001 X=0
+New Reactor.Load5Ground Phases=1 Bus1=n5.4 Bus2=n5.0 R=0.001 X=0
+New Reactor.Load6Ground Phases=1 Bus1=n6.4 Bus2=n6.0 R=0.001 X=0
+New fault.Falla2n   Bus1= n5.3   Bus2=n4.4 r=10.00000001
+solve
+Export Currents F2near.csv
+
+!!! Near-end Fault 
+!!  Line 3
+Redirect GridModel.dss 
+New Load.n3.1 Phases=1  Bus1=n3.1   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+New Load.n3.2 Phases=1  Bus1=n3.2   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+New Load.n3.3 Phases=1  Bus1=n3.3   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+new line.line14 geometry=4wire12 length=00.001 units=km bus1=n1.1.2.3.4 bus2=n4.1.2.3.4  Rho=100
+new line.line42 geometry=4wire12 length=49.999 units=km bus1=n4.1.2.3.4 bus2=n2.1.2.3.4  Rho=100
+new line.line25 geometry=4wire23 length=00.001 units=km bus1=n2.1.2.3.4 bus2=n5.1.2.3.4  Rho=100
+new line.line53 geometry=4wire23 length=39.999 units=km bus1=n5.1.2.3.4 bus2=n3.1.2.3.4  Rho=100
+new line.line36 geometry=4wire13 length=00.001 units=km bus1=n3.1.2.3.4 bus2=n6.1.2.3.4  Rho=100
+new line.line61 geometry=4wire13 length=59.999 units=km bus1=n6.1.2.3.4 bus2=n1.1.2.3.4  Rho=100
+New Reactor.SourceGround  Phases=1 Bus1=n1.4 Bus2=n1.0 R=00.00001 X=0
+New Reactor.Load2Ground  Phases=1 Bus1=n2.4 Bus2=n2.0 R=00.00001 X=0
+New Reactor.Load3Ground  Phases=1 Bus1=n3.4 Bus2=n3.0 R=00.00001 X=0
+New Reactor.Load4Ground Phases=1 Bus1=n4.4 Bus2=n4.0 R=0.001 X=0
+New Reactor.Load5Ground Phases=1 Bus1=n5.4 Bus2=n5.0 R=0.001 X=0
+New Reactor.Load6Ground Phases=1 Bus1=n6.4 Bus2=n6.0 R=0.001 X=0
+New fault.Falla3n   Bus1= n6.3   Bus2=n6.4 r=10.00000001
+solve
+Export Currents F3near.csv
+
+!!! Far-end Fault 
+!!  Line 1
+Redirect GridModel.dss 
+New Load.n3.1 Phases=1  Bus1=n3.1   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+New Load.n3.2 Phases=1  Bus1=n3.2   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+New Load.n3.3 Phases=1  Bus1=n3.3   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+new line.line14 geometry=4wire12 length=49.999 units=km bus1=n1.1.2.3.4 bus2=n4.1.2.3.4  Rho=100
+new line.line42 geometry=4wire12 length=00.001 units=km bus1=n4.1.2.3.4 bus2=n2.1.2.3.4  Rho=100
+new line.line25 geometry=4wire23 length=39.999 units=km bus1=n2.1.2.3.4 bus2=n5.1.2.3.4  Rho=100
+new line.line53 geometry=4wire23 length=00.001 units=km bus1=n5.1.2.3.4 bus2=n3.1.2.3.4  Rho=100
+new line.line36 geometry=4wire13 length=59.999 units=km bus1=n3.1.2.3.4 bus2=n6.1.2.3.4  Rho=100
+new line.line61 geometry=4wire13 length=00.001 units=km bus1=n6.1.2.3.4 bus2=n1.1.2.3.4  Rho=100
+New Reactor.SourceGround  Phases=1 Bus1=n1.4 Bus2=n1.0 R=00.00001 X=0
+New Reactor.Load2Ground  Phases=1 Bus1=n2.4 Bus2=n2.0 R=00.00001 X=0
+New Reactor.Load3Ground  Phases=1 Bus1=n3.4 Bus2=n3.0 R=00.00001 X=0
+New Reactor.Load4Ground Phases=1 Bus1=n4.4 Bus2=n4.0 R=0.001 X=0
+New Reactor.Load5Ground Phases=1 Bus1=n5.4 Bus2=n5.0 R=0.001 X=0
+New Reactor.Load6Ground Phases=1 Bus1=n6.4 Bus2=n6.0 R=0.001 X=0
+New fault.Falla1f   Bus1= n4.3   Bus2=n4.4 r=10.00000001
+solve
+Export Currents F1far.csv
+
+!!! Far-end Fault 
+!!  Line 2
+Redirect GridModel.dss 
+New Load.n3.1 Phases=1  Bus1=n3.1   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+New Load.n3.2 Phases=1  Bus1=n3.2   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+New Load.n3.3 Phases=1  Bus1=n3.3   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+new line.line14 geometry=4wire12 length=49.999 units=km bus1=n1.1.2.3.4 bus2=n4.1.2.3.4  Rho=100
+new line.line42 geometry=4wire12 length=00.001 units=km bus1=n4.1.2.3.4 bus2=n2.1.2.3.4  Rho=100
+new line.line25 geometry=4wire23 length=39.999 units=km bus1=n2.1.2.3.4 bus2=n5.1.2.3.4  Rho=100
+new line.line53 geometry=4wire23 length=00.001 units=km bus1=n5.1.2.3.4 bus2=n3.1.2.3.4  Rho=100
+new line.line36 geometry=4wire13 length=59.999 units=km bus1=n3.1.2.3.4 bus2=n6.1.2.3.4  Rho=100
+new line.line61 geometry=4wire13 length=00.001 units=km bus1=n6.1.2.3.4 bus2=n1.1.2.3.4  Rho=100
+New Reactor.SourceGround  Phases=1 Bus1=n1.4 Bus2=n1.0 R=00.00001 X=0
+New Reactor.Load2Ground  Phases=1 Bus1=n2.4 Bus2=n2.0 R=00.00001 X=0
+New Reactor.Load3Ground  Phases=1 Bus1=n3.4 Bus2=n3.0 R=00.00001 X=0
+New Reactor.Load4Ground Phases=1 Bus1=n4.4 Bus2=n4.0 R=0.001 X=0
+New Reactor.Load5Ground Phases=1 Bus1=n5.4 Bus2=n5.0 R=0.001 X=0
+New Reactor.Load6Ground Phases=1 Bus1=n6.4 Bus2=n6.0 R=0.001 X=0
+New fault.Falla2f   Bus1= n5.3   Bus2=n5.4 r=10.00000001
+solve
+Export Currents F2far.csv
+
+!!! Far-end Fault 
+!!  Line3
+Redirect GridModel.dss 
+New Load.n3.1 Phases=1  Bus1=n3.1   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+New Load.n3.2 Phases=1  Bus1=n3.2   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+New Load.n3.3 Phases=1  Bus1=n3.3   kVA=000 pf=0.8 kV=69 conn=wye vminpu=0.1 vmaxpu=1.9 
+new line.line14 geometry=4wire12 length=49.999 units=km bus1=n1.1.2.3.4 bus2=n4.1.2.3.4  Rho=100
+new line.line42 geometry=4wire12 length=00.001 units=km bus1=n4.1.2.3.4 bus2=n2.1.2.3.4  Rho=100
+new line.line25 geometry=4wire23 length=39.999 units=km bus1=n2.1.2.3.4 bus2=n5.1.2.3.4  Rho=100
+new line.line53 geometry=4wire23 length=00.001 units=km bus1=n5.1.2.3.4 bus2=n3.1.2.3.4  Rho=100
+new line.line36 geometry=4wire13 length=59.999 units=km bus1=n3.1.2.3.4 bus2=n6.1.2.3.4  Rho=100
+new line.line61 geometry=4wire13 length=00.001 units=km bus1=n6.1.2.3.4 bus2=n1.1.2.3.4  Rho=100
+New Reactor.SourceGround  Phases=1 Bus1=n1.4 Bus2=n1.0 R=00.00001 X=0
+New Reactor.Load2Ground  Phases=1 Bus1=n2.4 Bus2=n2.0 R=00.00001 X=0
+New Reactor.Load3Ground  Phases=1 Bus1=n3.4 Bus2=n3.0 R=00.00001 X=0
+New Reactor.Load4Ground Phases=1 Bus1=n4.4 Bus2=n4.0 R=0.001 X=0
+New Reactor.Load5Ground Phases=1 Bus1=n5.4 Bus2=n5.0 R=0.001 X=0
+New Reactor.Load6Ground Phases=1 Bus1=n6.4 Bus2=n6.0 R=0.001 X=0
+New fault.Falla3f   Bus1= n6.3   Bus2=n6.4 r=10.00000001
+solve
+Export Currents F3far.csv
