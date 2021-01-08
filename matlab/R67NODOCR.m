@@ -11,7 +11,7 @@ global Dmin Co nr Rg Rf Ipx S3a S3b S3c pf3a pf3b pf3c  k1 k2 k3 Mmax
 time00=cputime;
 %% Case study
 LoadDatabase; %Load the Three-bus test case
-neval=10000; %number of evaluations in the verification stage
+neval=1000; %number of evaluations in the verification stage
 %% Fault resistance in Ohms
 Rf=000000.00000001;% 
 %%

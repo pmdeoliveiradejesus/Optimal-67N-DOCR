@@ -1,7 +1,7 @@
 
 global Dmin Co nr Rg S3a S3b S3c pf3a pf3b pf3c k1 k2 k3 compile_path
 %% OpenDSS compile path, you must include your path here!
-compile_path='Compile (C:\Users\VaioPC\OneDrive - Universidad de los Andes\Optimal-67N-DOCR-coordination\IEEE-IAS\matlab\GridModel.dss)';
+compile_path='Compile (C:\Users\VaioPC\OneDrive - Universidad de los Andes\Optimal-67N-DOCR-coordination\matlab\GridModel.dss)';
 % Optimal DOCR coordination problem - Dataset pm.deoliveira@uniandes.edu.co
 % ---------------------------------------
 % Modified 3 bus test system --> Optimal coordination of directional 
